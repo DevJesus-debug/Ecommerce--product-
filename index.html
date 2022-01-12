@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <section class="logo-cont">
+        <div class="hamburger">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </div>
+        <div class="logo">
+          <img src="./images/logo.svg" alt="">
+        </div>
+         <ul>
+           <li>Collections</li>
+           <li> Men</li>
+           <li>Women</li>
+           <li>About</li>
+           <li>Contact</li>
+         </ul>
+      </section>  
+      <section class="cart-cont">
+        <div class="cart-logo">
+          <img src="./images/icon-cart.svg" alt="Cart icon">
+        </div>
+        <div class="profile-img">
+          <img src="./images/image-avatar.png" alt="Profile picture">
+        </div>
+      </section>
+    </nav>
+  </header>     
+  <main class="flex-cont">
+    <section class="image-cont">
+      <div class="img-slider">
+        <img class="image-1 " src="./images/image-product-1.jpg" alt="">
+        <img class="image-2" src="./images/image-product-2.jpg" alt="">
+        <img class="image-3" src="./images/image-product-3.jpg" alt="">
+        <img class="image-4" src="./images/image-product-4.jpg" alt="">
+        
+      </div>
+      <div class="left-btn">
+        <img src="./images/icon-previous.svg" alt="Previous button">
+      </div>
+      <div class="right-btn">
+        <img src="./images/icon-next.svg" alt="Next button">
+      </div>
+    </section>
+    <section class="info-cont">
+      <h5>Sneaker Company</h5>
+      <h1> Fall Limited Edition Sneakers</h1>
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="price-cont">
+        <div class="price">
+          <span class="new-price">$125.00</span>
+          <span class="discount">50%</span>
+        </div>
+        <div class="old-price">$250.00</div>
+      </div>
+      <div class="btn-cont">
+        <div class="counter">
+          <div class="minus-btn">
+            <img src="./images/icon-minus.svg" alt="minus icon">
+          </div>
+          <div class="number"></div>
+          <div class="plus-btn">
+            <img src="./images/icon-plus.svg" alt="plus icon">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="event.js"></script>
+</body>
+</html>

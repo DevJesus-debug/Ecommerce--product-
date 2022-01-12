@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-width: 370px;
+}
+
+/*MOBILE FIRST********/
+
+header{
+   width: 100%;
+   height: 10vh;
+}
+
+nav{
+    width: 85%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+nav .logo-cont{
+    display: flex;
+    align-items: center;
+}
+
+nav .logo-cont .hamburger{
+  margin-right: 10px;
+}
+
+nav .logo-cont .hamburger .line{
+    background: rgb(121, 121, 121);
+    margin: 3px;
+    height: 4px;
+    width: 17px;
+}
+
+nav .logo-cont ul{
+    display: none;
+}
+
+
+nav .cart-cont{
+    display: flex;
+    align-items: center;
+}
+
+nav .cart-cont .cart-logo{
+    margin-right: 30px;
+}
+nav .cart-cont .profile-img img{
+    width: 27px;
+}
+
+.flex-cont .image-cont {
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+}
+
+.flex-cont .image-cont img.active{
+    display: block;
+    width: 100%;
+    margin-top: -37px;
+}
+
+
+.flex-cont .image-cont img{
+    display: none;
+    
+}
+
+.image-cont .right-btn  img{
+   display: block;
+   width: 10px;
+}
+
+.image-cont .left-btn  img{
+    display: block;
+    width: 10px;
+ }
+
+.image-cont .left-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    background: white;
+    height: 40px;
+    top: 50%;
+    transform: translate(15px,-50%);
+    border-radius: 50%;
+}
+
+
+.image-cont .right-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    background: white;
+    height: 40px;
+    top: 50%;
+    right: 15px;
+    transform: translate(0,-50%);
+    border-radius: 50%;
+}
+
