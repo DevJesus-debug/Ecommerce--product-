@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | E-commerce product page</title>
@@ -13,20 +16,21 @@
     <nav>
       <section class="logo-cont">
         <div class="hamburger">
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
+          <img class="open-btn" src="./images/icon-menu.svg" alt="menu icon">
+          <img class="close-btn" src="./images/icon-close.svg" alt="menu icon">
         </div>
         <div class="logo">
-          <img src="./images/logo.svg" alt="">
+          <img src="./images/logo.svg" alt="Logo">
         </div>
-         <ul>
-           <li>Collections</li>
-           <li> Men</li>
-           <li>Women</li>
-           <li>About</li>
-           <li>Contact</li>
-         </ul>
+        <div class="nav-wraper">
+          <ul>
+            <li>Collections</li>
+            <li> Men</li>
+            <li>Women</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       </section>  
       <section class="cart-cont">
         <div class="cart-logo">
@@ -41,11 +45,10 @@
   <main class="flex-cont">
     <section class="image-cont">
       <div class="img-slider">
-        <img class="image-1 " src="./images/image-product-1.jpg" alt="">
-        <img class="image-2" src="./images/image-product-2.jpg" alt="">
-        <img class="image-3" src="./images/image-product-3.jpg" alt="">
-        <img class="image-4" src="./images/image-product-4.jpg" alt="">
-        
+        <img class="image-1" src="./images/image-product-1.jpg" alt="Photo of shoes">
+        <img class="image-2" src="./images/image-product-2.jpg" alt="Photo of shoes">
+        <img class="image-3" src="./images/image-product-3.jpg" alt="Photo of shoes">
+        <img class="image-4" src="./images/image-product-4.jpg" alt="Photo of shoes">
       </div>
       <div class="left-btn">
         <img src="./images/icon-previous.svg" alt="Previous button">
@@ -54,10 +57,11 @@
         <img src="./images/icon-next.svg" alt="Next button">
       </div>
     </section>
+    <!--Main text content-->
     <section class="info-cont">
       <h5>Sneaker Company</h5>
       <h1> Fall Limited Edition Sneakers</h1>
-      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+      <p class="info-text">These low-profile sneakers are your perfect casual wear companion. Featuring a 
         durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
       <div class="price-cont">
@@ -72,11 +76,15 @@
           <div class="minus-btn">
             <img src="./images/icon-minus.svg" alt="minus icon">
           </div>
-          <div class="number"></div>
+          <div class="number">0</div>
           <div class="plus-btn">
             <img src="./images/icon-plus.svg" alt="plus icon">
           </div>
         </div>
+        <button class="cart-btn">
+          <img src="./images/icon-cart-white.svg" alt="">
+          <p>Add to cart</p>
+        </button>
       </div>
     </section>
   </main>
