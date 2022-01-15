@@ -16,6 +16,7 @@ const nav = document.querySelector(".nav-wraper");
 const navLinks = document.querySelector(".nav-wraper ul");
 const xBtn = document.querySelector(".close-btn");
 const body = document.querySelector("body");
+const cartCount = document.querySelector(".cart-counter")
 
 let counter = 0;
 
@@ -68,22 +69,34 @@ prevBtn.addEventListener("click", ()=>{
 });
 
 //Item counter 
-
-
+    
+    let itemCounter = 0;
     minus.addEventListener("click",()=>{
-        if(counter === 0){
+        if(itemCounter === 0){
             false
         }else{
-            counter--
-            quantity.innerText = counter;
-            
+            itemCounter--
+            quantity.innerText = itemCounter;
+            cartCount.innerText = itemCounter;
         }
+
+        if(itemCounter === 0){
+            cartCount.classList.remove("display-count")
+        }
+
     });
     
     plus.addEventListener("click",()=>{
-        counter++
-        quantity.innerText = counter;
+        itemCounter++
+        quantity.innerText = itemCounter;
+        cartCount.innerText = itemCounter;
+
+        if(itemCounter !== 0){
+            cartCount.classList.add("display-count");
+        }
     });
+
+
 
 
 
