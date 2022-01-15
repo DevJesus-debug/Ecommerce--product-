@@ -68,7 +68,7 @@ nav .logo-cont .hamburger .close-btn.close{
 nav .logo-cont .nav-wraper{
     position: fixed;
     transform: translateX(-100%);
-    transition: all ease 1s;
+    transition: all ease .5s;
     top: 0;
     left: 0;
     bottom: 0;
@@ -78,7 +78,7 @@ nav .logo-cont .nav-wraper{
 
 nav .logo-cont .nav-wraper.open{
     transform: translateX(0);
-    animation:color 3s ease-in-out forwards;
+    animation:color 2.7s ease-in-out forwards;
  }
 
 @keyframes color{
@@ -101,15 +101,6 @@ nav .logo-cont .nav-wraper ul{
     background-color: white;
     padding: 100px 0;
 }
-
-
-
-
-
-
-
-
-
 
 nav .logo-cont .nav-wraper ul li{
    list-style: none;
@@ -225,7 +216,7 @@ nav .cart-cont .profile-img img{
     margin-bottom: 25px;
 }
 
-/*The cart part*/
+/*The cart Section*/
 
 .price-cont{
     display: flex;
@@ -276,6 +267,16 @@ nav .cart-cont .profile-img img{
     background-color:var(--light-gray);
     border-radius: 10px;
     margin-bottom: 15px;
+}
+
+.btn-cont .counter img{
+    width: 14px;
+}
+
+.btn-cont .counter .number{
+    font-family: var(--main-text);
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .btn-cont .cart-btn{

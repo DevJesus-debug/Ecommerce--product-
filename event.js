@@ -8,8 +8,8 @@ const imgFour = document.querySelector(".image-4");
 const nextBtn = document.querySelector(".right-btn");
 const prevBtn = document.querySelector(".left-btn");
 const quantity = document.querySelector(".number");
-const minus = document.querySelector(".minus-btn");
-const plus = document.querySelector(".plus-btn");
+const minus = document.querySelector(".minus-btn img");
+const plus = document.querySelector(".plus-btn img");
 //Navigation,Hamburger
 const menu = document.querySelector(".open-btn");
 const nav = document.querySelector(".nav-wraper");
@@ -17,7 +17,7 @@ const navLinks = document.querySelector(".nav-wraper ul");
 const xBtn = document.querySelector(".close-btn");
 const body = document.querySelector("body");
 
-
+let counter = 0;
 
 //Working with hamburger
 
@@ -35,18 +35,7 @@ xBtn.addEventListener("click",()=>{
 });
 
 
-
-
-
-
-
-
-
-
-
-
 //Image Carousel
-let counter = 0;
 
 imageCont[0].style.display = "block";
 
@@ -77,3 +66,25 @@ prevBtn.addEventListener("click", ()=>{
 
     imageCont[counter].style.display = "block";
 });
+
+//Item counter 
+
+
+    minus.addEventListener("click",()=>{
+        if(counter === 0){
+            false
+        }else{
+            counter--
+            quantity.innerText = counter;
+            
+        }
+    });
+    
+    plus.addEventListener("click",()=>{
+        counter++
+        quantity.innerText = counter;
+    });
+
+
+
+
