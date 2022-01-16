@@ -87,17 +87,13 @@ prevBtn.addEventListener("click", ()=>{
             quantity.innerText = itemCounter;
         }
 
-        if(itemCounter === 0){
-            cartCount.classList.remove("display-count");
-        }
 
-        console.log(itemCounter)
+        
     });
     
     plus.addEventListener("click",()=>{
         itemCounter++
         if(itemCounter !== 0){
-            cartCount.classList.add("display-count");
             quantity.innerText = itemCounter;
         }
     });
@@ -107,6 +103,7 @@ prevBtn.addEventListener("click", ()=>{
 addToCart.addEventListener("click",()=>{
     if(itemCounter > 0){
         cartMessage.classList.add("message-show");
+        cartCount.classList.add("display-count");
         cartCount.innerText = itemCounter;
     }else{
         cartMessage.classList.remove("message-show")
