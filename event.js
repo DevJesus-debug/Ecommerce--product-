@@ -10,13 +10,21 @@ const prevBtn = document.querySelector(".left-btn");
 const quantity = document.querySelector(".number");
 const minus = document.querySelector(".minus-btn img");
 const plus = document.querySelector(".plus-btn img");
-//Navigation,Hamburger
+const cartBtn = document.querySelector(".cart-logo img");
+const addToCart = document.querySelector(".cart-btn");
+//Navigation,Hamburger,Cart
 const menu = document.querySelector(".open-btn");
 const nav = document.querySelector(".nav-wraper");
 const navLinks = document.querySelector(".nav-wraper ul");
 const xBtn = document.querySelector(".close-btn");
 const body = document.querySelector("body");
-const cartCount = document.querySelector(".cart-counter")
+const cartCount = document.querySelector(".cart-counter");
+const cartCont = document.querySelector(".cart-items-cont");
+const cartMessage = document.querySelector(".items-cont p");
+
+
+
+
 
 let counter = 0;
 
@@ -68,33 +76,52 @@ prevBtn.addEventListener("click", ()=>{
     imageCont[counter].style.display = "block";
 });
 
-//Item counter 
-    
+//Item counter
     let itemCounter = 0;
+    
     minus.addEventListener("click",()=>{
         if(itemCounter === 0){
             false
         }else{
             itemCounter--
             quantity.innerText = itemCounter;
-            cartCount.innerText = itemCounter;
         }
 
         if(itemCounter === 0){
-            cartCount.classList.remove("display-count")
+            cartCount.classList.remove("display-count");
         }
 
+        console.log(itemCounter)
     });
     
     plus.addEventListener("click",()=>{
         itemCounter++
-        quantity.innerText = itemCounter;
-        cartCount.innerText = itemCounter;
-
         if(itemCounter !== 0){
             cartCount.classList.add("display-count");
+            quantity.innerText = itemCounter;
         }
     });
+
+//Cart functionality
+
+addToCart.addEventListener("click",()=>{
+    if(itemCounter > 0){
+        cartMessage.classList.add("message-show");
+        cartCount.innerText = itemCounter;
+    }else{
+        cartMessage.classList.remove("message-show")
+    }
+
+   
+})
+
+
+cartBtn.addEventListener("click", ()=>{
+    cartCont.classList.toggle("cart-open");
+});
+
+
+
 
 
 

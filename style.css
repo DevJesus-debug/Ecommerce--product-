@@ -16,6 +16,7 @@ body.no-scroll{
     --main-text: 'Kumbh Sans', sans-serif;
     --orange:hsl(26, 100%, 55%);
     --pale-orange:hsl(25, 100%, 94%);
+    --dark-gray:hsl(219, 9%, 45%);
     --gray: hsl(220, 14%, 75%);
     --light-gray:hsl(223, 64%, 98%);
     --wraper-width:87%;
@@ -148,6 +149,7 @@ nav .cart-cont .profile-img img{
     width: 27px;
 }
 
+/*Nav cart counter javascript*/
 nav .cart-cont .cart-logo .cart-counter{
     width: 20px;
     height: 15px;
@@ -170,7 +172,7 @@ nav .cart-cont .cart-logo .cart-counter.display-count{
 }
 
 
-
+/*Cart btn toggle javascript */
 .cart-cont .cart-items-cont{
     position: absolute;
     z-index: 100;
@@ -178,10 +180,17 @@ nav .cart-cont .cart-logo .cart-counter.display-count{
     margin-left:-259px;
     margin-top: 27px;
     width: 350px;
+    height: 265px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    display: none;
 }
+
+.cart-cont .cart-items-cont.cart-open{
+    display: flex;
+}
+
 
 .cart-cont .cart-items-cont h1{
 padding: 20px;
@@ -193,9 +202,34 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
 .cart-cont .cart-items-cont .cart-btn-main{
    margin-top: 20px;
    margin: 20px;
+   display: none;
 }
 
+.cart-cont .cart-items-cont .cart-btn-main{
+    margin-top: 20px;
+    margin: 20px;
+ }
 
+ .cart-cont .cart-items-cont .items-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: 100%;
+  }
+
+
+
+/* Cart message Javascript*/
+ .cart-cont .cart-items-cont p{
+   font-family: var(--main-text);
+   font-weight: 700;
+   color: var(--dark-gray);
+   display: block;
+ }
+
+ .cart-cont .cart-items-cont p.message-show{
+    display: none;
+  }
 
 
 
