@@ -32,32 +32,47 @@
           </ul>
         </div>
       </section>  
+      <!--Cart drop down-->
       <section class="cart-cont">
-
         <div class="cart-logo">
           <img src="./images/icon-cart.svg" alt="Cart icon">
-          <div class="cart-counter"></div>
+          <div class="cart-counter"> 
+          </div>
           <div class="cart-items-cont">
             <h1>Cart</h1>
             <div class="items-cont">
-              <p>Your cart is empty.</p>
+              <p class="message-show">Your cart is empty.</p>            
+              <div class="items-cart-cont">
+                <div class="info-price-cont">
+                  <img src="/images/image-product-1-thumbnail.jpg" alt="Product">
+
+                  <div class="price-and-quantity">
+                    <p class="title">Autum Limited Edition...</p>
+                    <div class="price">$<span class="amount">125</span>.00 x<span class="quant-multiplier"></span></div>
+                    <div class="quantity-item"></div>
+                    <div class="total"></div>
+                  </div>
+
+                </div>
+                <div class="delete-icon">
+                  <img src="./images/icon-delete.svg" alt="">
+                </div>
+              </div>
             </div>
-            <button class="cart-btn-main">
-              <p>Checkout</p>
+            <button class="cart-btn-checkout">
+              Checkout
             </button>
           </div>
-
         </div>
-
-
-
         <div class="profile-img">
           <img src="./images/image-avatar.png" alt="Profile picture">
         </div>
       </section>
     </nav>
   </header>     
+  <!--From mobile to desktop container-->
   <main class="flex-cont">
+    <!--Image carousel-->
     <section class="image-cont">
       <div class="img-slider">
         <img class="image-1" src="./images/image-product-1.jpg" alt="Photo of shoes">
@@ -77,7 +92,7 @@
       <h5>Sneaker Company</h5>
       <h1> Fall Limited Edition Sneakers</h1>
       <p class="info-text">These low-profile sneakers are your perfect casual wear companion. Featuring a 
-        durable rubber outer sole, they’ll withstand everything the weather can offer.
+        durable rubber outer sole, they'll withstand everything the weather can offer.
       </p>
       <div class="price-cont">
         <div class="price">

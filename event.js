@@ -12,6 +12,8 @@ const minus = document.querySelector(".minus-btn img");
 const plus = document.querySelector(".plus-btn img");
 const cartBtn = document.querySelector(".cart-logo img");
 const addToCart = document.querySelector(".cart-btn");
+const checkOutBtn = document.querySelector(".cart-btn-checkout");
+const deleteBtn = document.querySelector(".delete-icon img");
 //Navigation,Hamburger,Cart
 const menu = document.querySelector(".open-btn");
 const nav = document.querySelector(".nav-wraper");
@@ -21,6 +23,10 @@ const body = document.querySelector("body");
 const cartCount = document.querySelector(".cart-counter");
 const cartCont = document.querySelector(".cart-items-cont");
 const cartMessage = document.querySelector(".items-cont p");
+const cartAmount = document.querySelector(".amount");
+const quantMultiplier = document.querySelector(".quant-multiplier");
+
+
 
 
 
