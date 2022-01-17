@@ -25,14 +25,10 @@ const cartCont = document.querySelector(".cart-items-cont");
 const cartMessage = document.querySelector(".items-cont p");
 const cartAmount = document.querySelector(".amount");
 const quantMultiplier = document.querySelector(".quant-multiplier");
+const totalAmount = document.querySelector(".total");
+const cartEmptyMessage = document.querySelector(".cart-message");
+const itemCont = document.querySelector(".items-cart-cont");
 
-
-
-
-
-
-
-let counter = 0;
 
 //Working with hamburger
 
@@ -51,6 +47,7 @@ xBtn.addEventListener("click",()=>{
 
 
 //Image Carousel
+let counter = 0;
 
 imageCont[0].style.display = "block";
 
@@ -84,6 +81,7 @@ prevBtn.addEventListener("click", ()=>{
 
 //Item counter
     let itemCounter = 0;
+
     
     minus.addEventListener("click",()=>{
         if(itemCounter === 0){
@@ -92,9 +90,6 @@ prevBtn.addEventListener("click", ()=>{
             itemCounter--
             quantity.innerText = itemCounter;
         }
-
-
-        
     });
     
     plus.addEventListener("click",()=>{
@@ -106,23 +101,34 @@ prevBtn.addEventListener("click", ()=>{
 
 //Cart functionality
 
-addToCart.addEventListener("click",()=>{
-    if(itemCounter > 0){
-        cartMessage.classList.add("message-show");
-        cartCount.classList.add("display-count");
-        cartCount.innerText = itemCounter;
-    }else{
-        cartMessage.classList.remove("message-show")
-    }
-
-   
-})
-
-
 cartBtn.addEventListener("click", ()=>{
     cartCont.classList.toggle("cart-open");
 });
 
+addToCart.addEventListener("click",()=>{
+    if(itemCounter > 0){
+        quantity.innerText = 0;
+        cartMessage.classList.add("message-show");
+        cartCount.classList.add("display-count");
+        cartCount.innerText = itemCounter;
+        quantMultiplier.innerText = itemCounter;
+        let total = itemCounter * cartAmount.innerText;
+        totalAmount.innerText = "$" + total + ".00";
+        cartEmptyMessage.style.display="none";
+        itemCont.style.display="flex";
+        checkOutBtn.style.display ="block";
+    }else{
+        cartMessage.classList.remove("message-show");
+    }
+})
+
+deleteBtn.addEventListener("click",()=>{
+    itemCounter = 0;
+    itemCont.style.display ="none";
+    checkOutBtn.style.display ="none";
+    cartEmptyMessage.style.display="block";
+    cartCount.classList.remove("display-count");
+})
 
 
 

@@ -175,7 +175,7 @@ nav .cart-cont .cart-logo .cart-counter.display-count{
 /*Cart btn toggle javascript */
 .cart-cont .cart-items-cont{
     position: absolute;
-    z-index: 100;
+    z-index: 90;
     background-color: white;
     margin-left:-259px;
     margin-top: 27px;
@@ -199,14 +199,6 @@ font-weight: 700;
 border-bottom: solid 1px rgba(202, 202, 202, 0.52);
 }
 
-.cart-cont .cart-items-cont .cart-btn-checkout{
-   margin-top: 20px;
-   margin: 20px;
-   color: white;
-   font-size: 1rem;
-   font-weight: 700;
-}
-
 
 .cart-cont .cart-items-cont .items-cont{
     display: flex;
@@ -218,15 +210,11 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
 
 
 /* Cart message Javascript*/
-.cart-cont .cart-items-cont p{
+.cart-cont .cart-items-cont .cart-message{
    font-family: var(--main-text);
    font-weight: 700;
    color: var(--dark-gray);
    display: block;
-}
-
-.cart-cont .cart-items-cont p.message-show{
-    display: none;
 }
 
 /*cart Javascript style*/
@@ -236,7 +224,17 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
       width: 100%;
       align-items: center;
       justify-content: center;
+      display: none;
 }
+
+.cart-cont .cart-items-cont .cart-btn-checkout{
+    margin-top: 20px;
+    margin: 20px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    display: none;
+ }
 
 .items-cont .items-cart-cont .info-price-cont{
     display: flex;
@@ -249,17 +247,32 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
     margin-right: 17px;
 }
 
-.items-cont .items-cart-cont .price-and-quantity{
+.items-cont .items-cart-cont .item{
     font-family: var(--main-text);
     color: var(--gray);
     margin-right: 35px;
 }
 
-.items-cont .items-cart-cont .price-and-quantity p{
+.items-cont .items-cart-cont .item p{
     font-family: var(--main-text);
     color: var(--dark-gray);
     margin-bottom: 10px;
 }
+
+.items-cont .items-cart-cont .item .price-total{
+  display: flex;
+}
+
+.items-cont .items-cart-cont .item .quant-multiplier{
+    margin-left: 5px;
+}
+
+.items-cont .items-cart-cont .item .total{
+    margin-left: 10px;
+    font-weight: 700;
+    color: black;
+}
+
 
 
 
