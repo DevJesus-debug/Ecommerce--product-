@@ -1,7 +1,7 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -422,7 +422,7 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
 .btn-cont .counter{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 25px;
     background-color:var(--light-gray);
     border-radius: 10px;
     margin-bottom: 15px;
@@ -440,11 +440,27 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
 
 .btn-cont .counter .minus-btn{
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.btn-cont .counter .minus-btn img{
+   margin: 0;
+}
+
 
 .btn-cont .counter .plus-btn{
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.btn-cont .counter .plus-btn img{
+   margin: 0;
+}
+
 
 
 .btn-cont .cart-btn{
@@ -559,24 +575,78 @@ nav .cart-cont .profile-img img{
     margin-top: 0;
 }
 
+.image-cont .xs-img-cont{
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.image-cont .xs-img-cont .cont{
+    width: 80px;
+    border-radius: 10px;
+}
+
+.image-cont .xs-img-cont img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.image-cont .xs-img-cont img.active-img{
+    border: solid 2px var(--orange);
+}
+
+
 /*Info container*/
 
 .info-cont{
-    padding: 40px 0 0 0;
+    padding: 50px 0 0 0;
     width: 40%;
     margin: 0;
+    margin-left: 40px;
+}
+
+.info-cont h5{
+    margin-bottom: 25px;
+}
+
+.info-cont h1{
+    font-size: 3rem;
+    line-height: 50px;
+    margin-bottom: 40px;
+}
+
+.info-cont .info-text{
+    padding-right: 50px;
 }
 
 .btn-cont{
     width: 100%;
     display: flex;
     flex-direction: initial;
+    margin-top: 37px;
+}
+
+.btn-cont .counter{
+    width: 160px;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 0;
+    padding: 20px 15px;
+}
+
+.btn-cont .cart-btn{
+   padding: 20px 80px;
 }
 
 .price-cont{
     display: block;
 }
 
+.price-cont .old-price{
+    margin-top: 10px;
+}
 
 
 

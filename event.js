@@ -1,9 +1,9 @@
 //Images
 const imageCont = document.querySelectorAll(".img-slider img");
-const imgOne = document.querySelector(".image-1");
-const imgTwo = document.querySelector(".image-2");
-const imgThree = document.querySelector(".image-3");
-const imgFour = document.querySelector(".image-4");
+const imgOne = document.querySelector(".cont-1 img");
+const imgTwo = document.querySelector(".cont-2 img");
+const imgThree = document.querySelector(".cont-3 img");
+const imgFour = document.querySelector(".cont-4 img");
 //Buttons
 const nextBtn = document.querySelector(".right-btn");
 const prevBtn = document.querySelector(".left-btn");
@@ -79,6 +79,26 @@ prevBtn.addEventListener("click", ()=>{
     imageCont[counter].style.display = "block";
 });
 
+//Mini images functionality
+
+imgOne.addEventListener("click", ()=>{
+    imgOne.classList.toggle("active-img");
+})
+
+imgTwo.addEventListener("click", ()=>{
+    imgTwo.classList.toggle("active-img");
+})
+
+imgThree.addEventListener("click", ()=>{
+    imgThree.classList.toggle("active-img");
+})
+
+imgFour.addEventListener("click", ()=>{
+    imgFour.classList.toggle("active-img");
+})
+
+
+
 //Item counter
     let itemCounter = 0;
 
@@ -129,6 +149,8 @@ deleteBtn.addEventListener("click",()=>{
     cartEmptyMessage.style.display="block";
     cartCount.classList.remove("display-count");
 })
+
+
 
 
 
