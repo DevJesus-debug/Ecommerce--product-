@@ -595,6 +595,7 @@ nav .cart-cont .profile-img img{
 
 .image-cont .xs-img-cont img.active-img{
     border: solid 2px var(--orange);
+    opacity: 0.3;
 }
 
 
