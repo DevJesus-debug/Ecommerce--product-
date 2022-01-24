@@ -1,9 +1,8 @@
 //Images
 const imageCont = document.querySelectorAll(".img-slider img");
-const imgOne = document.querySelector(".cont-1 img");
-const imgTwo = document.querySelector(".cont-2 img");
-const imgThree = document.querySelector(".cont-3 img");
-const imgFour = document.querySelector(".cont-4 img");
+const xsImageCont = document.querySelector(".xs-img-cont");
+const xsImages = document.querySelectorAll(".xs-img-cont img");
+const imgModal = document.querySelector(".image-modal");
 //Buttons
 const nextBtn = document.querySelector(".right-btn");
 const prevBtn = document.querySelector(".left-btn");
@@ -29,43 +28,43 @@ const totalAmount = document.querySelector(".total");
 const cartEmptyMessage = document.querySelector(".cart-message");
 const itemCont = document.querySelector(".items-cart-cont");
 
-
+let counter = 0;
 //Working with hamburger
 
 menu.addEventListener("click",()=>{
     nav.classList.add("open");
     xBtn.classList.add("close");
     menu.classList.add("close");
+    body.classList.add("no-scroll");
 });
 
 
 xBtn.addEventListener("click",()=>{
-    nav.classList.remove("open")
-    xBtn.classList.remove("close")
-    menu.classList.remove("close")
+    nav.classList.remove("open");
+    xBtn.classList.remove("close");
+    menu.classList.remove("close");
+    body.classList.remove("no-scroll");
 });
 
 
-//Image Carousel
-let counter = 0;
+//Next Image Function
 
-imageCont[0].style.display = "block";
-
-nextBtn.addEventListener("click", ()=>{
+function nextImg(image){
     counter++
-    if(counter === imageCont.length){
-        imageCont[counter - 1].style.display = "none";
+    if(counter === image.length){
+        image[counter - 1].style.display = "none";
         counter = 0;  
     }else if(counter !== 0){
-        imageCont[counter -1].style.display = "none";
+        image[counter -1].style.display = "none";
     }else{
         false
     }
+    image[counter].style.display = "block";
+}
 
-    imageCont[counter].style.display = "block";
-});
+//Previous Image Function
 
-prevBtn.addEventListener("click", ()=>{
+function previousImg(image){
     counter--
     if(counter === -1){
         counter = imageCont.length - 1;
@@ -77,29 +76,24 @@ prevBtn.addEventListener("click", ()=>{
     }
 
     imageCont[counter].style.display = "block";
+}
+
+//Image Carousel buttons
+
+imageCont[0].style.display = "block";
+
+nextBtn.addEventListener("click", ()=>{
+    nextImg(imageCont)
 });
 
-//Mini images functionality
-
-imgOne.addEventListener("click", ()=>{
-    imgOne.classList.toggle("active-img");
-})
-
-imgTwo.addEventListener("click", ()=>{
-    imgTwo.classList.toggle("active-img");
-})
-
-imgThree.addEventListener("click", ()=>{
-    imgThree.classList.toggle("active-img");
-})
-
-imgFour.addEventListener("click", ()=>{
-    imgFour.classList.toggle("active-img");
-})
+prevBtn.addEventListener("click", ()=>{
+   previousImg(imageCont)
+});
 
 
 
-//Item counter
+
+//Cart Item counter
     let itemCounter = 0;
 
     
@@ -150,12 +144,48 @@ deleteBtn.addEventListener("click",()=>{
     cartCount.classList.remove("display-count");
 })
 
+//Desktop mini images Funtionality
 
 
 
+xsImageCont.addEventListener("mouseover", (e)=>{
+    if(e.target === xsImages[0]){
+        imageCont[0].style.display = "block";
+        imageCont[1].style.display = "none";
+        imageCont[2].style.display = "none";
+        imageCont[3].style.display = "none";
+    }else if(e.target === xsImages[1]){
+        imageCont[1].style.display ="block";
+        imageCont[0].style.display = "none";
+        imageCont[2].style.display = "none";
+        imageCont[3].style.display = "none";
+    }else if(e.target === xsImages[2]){
+     imageCont[2].style.display ="block";
+     imageCont[0].style.display = "none";
+     imageCont[1].style.display = "none";
+     imageCont[3].style.display = "none";
+    }else if(e.target === xsImages[3]){
+     imageCont[3].style.display ="block";
+     imageCont[0].style.display = "none";
+     imageCont[1].style.display = "none";
+     imageCont[2].style.display = "none";
+    }
+})
+
+xsImageCont.addEventListener("click", (e)=>{
+    if(e.target === xsImages[0]){
+      imgModal.style.display = "flex";
+    }else if(e.target === xsImages[1]){
+      imgModal.style.display = "flex";
+    }else if(e.target === xsImages[2]){
+      imgModal.style.display = "flex";
+    }else if(e.target === xsImages[3]){
+      imgModal.style.display = "flex";
+    }
+})
 
 
 
-
+//Modal Functionality
 
 

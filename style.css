@@ -291,6 +291,13 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
 }
 
 /*Image carousel*/
+.image-modal{
+    display: none;
+}
+
+.image-cont .xs-img-cont{
+   display: none;
+}
 
 .flex-cont .image-cont {
     width: 100%;
@@ -491,12 +498,20 @@ border-bottom: solid 1px rgba(202, 202, 202, 0.52);
     font-size: 1rem;
 }
 
+
+.attribution{
+    text-align: center;
+    font-family: var(--main-text);
+    margin-top: 50px;
+}
 /*Desktop quearies**********************************/
 
 @media screen and (min-width:700px){
+ 
+
  header{
-     height: 15vh;
-     margin-bottom: 90px;
+     height: 13vh;
+     margin-bottom: 20px;
  }
 
  nav {
@@ -544,6 +559,8 @@ nav .cart-cont .profile-img img{
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     height: 75vh;
     padding: 0 6rem;
 }
@@ -551,8 +568,8 @@ nav .cart-cont .profile-img img{
 
 .flex-cont{
     display: flex;
-    width: 1500px;
     max-width: 3000px;
+
 }
 
 .image-cont .right-btn {
@@ -569,12 +586,13 @@ nav .cart-cont .profile-img img{
     flex-direction: column;
     align-items: center;
     width: 50%;
-    overflow: initial;
 }
 
 .flex-cont .image-cont .img-slider{
     width: 450px;
+    height: 450px;
     border-radius: 30px;
+    overflow: hidden;
 }
 
 .flex-cont .image-cont .img-slider img{
@@ -586,7 +604,7 @@ nav .cart-cont .profile-img img{
     display: flex;
     width: 450px;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .image-cont .xs-img-cont .cont{
@@ -614,10 +632,10 @@ nav .cart-cont .profile-img img{
 /*Info container*/
 
 .info-cont{
-    padding: 50px 0 0 0;
+    padding: 65px 0 0 0;
     width: 40%;
     margin: 0;
-    margin-left: 40px;
+    margin-left: 35px;
 }
 
 .info-cont h5{
@@ -625,9 +643,9 @@ nav .cart-cont .profile-img img{
 }
 
 .info-cont h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .info-cont .info-text{
@@ -646,11 +664,11 @@ nav .cart-cont .profile-img img{
     justify-content: space-between;
     margin-right: 20px;
     margin-bottom: 0;
-    padding: 20px 15px;
+    padding: 20px 10px;
 }
 
 .btn-cont .cart-btn{
-   padding: 10px 90px;
+   padding: 10px 70px;
 }
 
 .price-cont{
@@ -661,9 +679,48 @@ nav .cart-cont .profile-img img{
     margin-top: 10px;
 }
 
+/*Image Modal */
+
+.image-modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+.image-modal .image-cont .close-icon{
+    display: flex;
+    width: 100%;
+    
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.image-modal .image-cont .close-icon .x-icon:hover{
+   fill: var(--orange);
+ }
 
 
+.image-modal .image-cont-modal .img-slider-modal{
+    overflow: hidden;
+    width: 450px;
+    height: 450px;
+    border-radius: 30px;
+}
 
+.image-modal .image-cont-modal .img-slider-modal img{
+    width: 100% ;
+}
+
+.image-modal .image-cont-modal .xs-img-modal{
+    display: flex;
+}
 
 
 
