@@ -75,12 +75,12 @@ nav .logo-cont .hamburger .open-btn.close {
     
 }
 
-nav .logo-cont .hamburger .close-btn{
+nav .logo-cont .hamburger .close-icon{
     display: none;   
     
 }
 
-nav .logo-cont .hamburger .close-btn.close{
+nav .logo-cont .hamburger .close-icon.close{
     display: block;
     z-index: 101;
     position: relative;
@@ -593,6 +593,7 @@ nav .cart-cont .profile-img img{
     height: 450px;
     border-radius: 30px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .flex-cont .image-cont .img-slider img{
@@ -694,15 +695,19 @@ nav .cart-cont .profile-img img{
     background-color: rgba(0, 0, 0, 0.548);
 }
 
-.image-modal .image-cont .close-icon{
-    display: flex;
-    width: 100%;
-    
-    justify-content: flex-end;
-    margin-bottom: 15px;
+.image-cont-modal{
+    position: relative;
 }
 
-.image-modal .image-cont .close-icon .x-icon:hover{
+.image-modal .image-cont-modal .close-icon-modal{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.image-modal .image-cont-modal .close-icon-modal .x-icon:hover{
    fill: var(--orange);
  }
 
@@ -716,16 +721,74 @@ nav .cart-cont .profile-img img{
 
 .image-modal .image-cont-modal .img-slider-modal img{
     width: 100% ;
+    display: none;
 }
 
 .image-modal .image-cont-modal .xs-img-modal{
     display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0 35px;
+    margin-top: 30px;
 }
 
 
+.image-modal .image-cont-modal .xs-img-modal .cont{
+    display: flex;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background: white;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-modal .image-cont-modal .xs-img-modal .cont:hover{
+    border: solid 3px var(--orange);
+}
+
+ 
+
+.image-modal .image-cont-modal .xs-img-modal img:hover{
+   opacity: 0.3;
+}
+
+.image-modal .image-cont-modal .modal-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    background: white;
+    height: 50px;
+    top: 50%;
+    right: 15px;
+    transform: translate(0,-50%);
+    border-radius: 50%;
+    cursor: pointer;
+ }
 
 
+ .image-modal .image-cont-modal .left-btn-modal{
+    position: absolute;
+    left: -23px;
+    top: 45%;
+    outline: none;
+ }
 
+ .image-modal .image-cont-modal .right-btn-modal{
+    position: absolute;
+    top: 45%;
+    right: -23px;
+    outline: none;
+ }
+
+ .image-modal .image-cont-modal .right-btn-modal:hover .right-svg{
+    stroke: var(--orange);
+ }
+
+ .image-modal .image-cont-modal .left-btn-modal:hover .left-svg{
+    stroke: var(--orange);
+ }
 
 
 

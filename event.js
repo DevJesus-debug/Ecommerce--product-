@@ -1,8 +1,8 @@
 //Images
 const imageCont = document.querySelectorAll(".img-slider img");
+const imgSlider = document.querySelector(".img-slider");
 const xsImageCont = document.querySelector(".xs-img-cont");
 const xsImages = document.querySelectorAll(".xs-img-cont img");
-const imgModal = document.querySelector(".image-modal");
 //Buttons
 const nextBtn = document.querySelector(".right-btn");
 const prevBtn = document.querySelector(".left-btn");
@@ -17,7 +17,7 @@ const deleteBtn = document.querySelector(".delete-icon img");
 const menu = document.querySelector(".open-btn");
 const nav = document.querySelector(".nav-wraper");
 const navLinks = document.querySelector(".nav-wraper ul");
-const xBtn = document.querySelector(".close-btn");
+const xBtn = document.querySelector(".close-icon");
 const body = document.querySelector("body");
 const cartCount = document.querySelector(".cart-counter");
 const cartCont = document.querySelector(".cart-items-cont");
@@ -27,6 +27,16 @@ const quantMultiplier = document.querySelector(".quant-multiplier");
 const totalAmount = document.querySelector(".total");
 const cartEmptyMessage = document.querySelector(".cart-message");
 const itemCont = document.querySelector(".items-cart-cont");
+//Modal variables
+const closeModal = document.querySelector(".close-icon-modal");
+const imgModal = document.querySelector(".image-modal");
+const rightBtnModal = document.querySelector(".right-btn-modal");
+const leftBtnModal = document.querySelector(".left-btn-modal");
+const imgSliderModal = document.querySelector(".img-slider-modal");
+const imagesSliderModal = document.querySelectorAll(".img-slider-modal img");
+
+
+
 
 let counter = 0;
 //Working with hamburger
@@ -67,15 +77,15 @@ function nextImg(image){
 function previousImg(image){
     counter--
     if(counter === -1){
-        counter = imageCont.length - 1;
-        imageCont[0].style.display ="none";
-    }else if(counter !== imageCont.length -1){
-        imageCont[counter + 1].style.display = "none"; 
+        counter = image.length - 1;
+        image[0].style.display ="none";
+    }else if(counter !== image.length -1){
+        image[counter + 1].style.display = "none"; 
     }else{
         false
     }
 
-    imageCont[counter].style.display = "block";
+    image[counter].style.display = "block";
 }
 
 //Image Carousel buttons
@@ -160,32 +170,71 @@ xsImageCont.addEventListener("mouseover", (e)=>{
         imageCont[2].style.display = "none";
         imageCont[3].style.display = "none";
     }else if(e.target === xsImages[2]){
-     imageCont[2].style.display ="block";
-     imageCont[0].style.display = "none";
-     imageCont[1].style.display = "none";
-     imageCont[3].style.display = "none";
+        imageCont[2].style.display ="block";
+        imageCont[0].style.display = "none";
+        imageCont[1].style.display = "none";
+        imageCont[3].style.display = "none";
     }else if(e.target === xsImages[3]){
-     imageCont[3].style.display ="block";
-     imageCont[0].style.display = "none";
-     imageCont[1].style.display = "none";
-     imageCont[2].style.display = "none";
+        imageCont[3].style.display ="block";
+        imageCont[0].style.display = "none";
+        imageCont[1].style.display = "none";
+        imageCont[2].style.display = "none";
     }
 })
-
-xsImageCont.addEventListener("click", (e)=>{
-    if(e.target === xsImages[0]){
-      imgModal.style.display = "flex";
-    }else if(e.target === xsImages[1]){
-      imgModal.style.display = "flex";
-    }else if(e.target === xsImages[2]){
-      imgModal.style.display = "flex";
-    }else if(e.target === xsImages[3]){
-      imgModal.style.display = "flex";
-    }
-})
-
-
 
 //Modal Functionality
+imgSlider.addEventListener("click", (e)=>{
+    imgModal.style.display = "flex";
+    console.log(e.target)
+    if(e.target === imageCont[0]){
+        imagesSliderModal[0].style.display = "block";
+        imagesSliderModal[1].style.display = "none";
+        imagesSliderModal[2].style.display = "none";
+        imagesSliderModal[3].style.display = "none";
+        counter = 0;
+    }
+
+    if(e.target === imageCont[1]){
+        imagesSliderModal[1].style.display = "block";
+        imagesSliderModal[2].style.display = "none";
+        imagesSliderModal[3].style.display = "none";
+        imagesSliderModal[0].style.display = "none";
+        counter = 1;
+    }
+
+    if(e.target === imageCont[2]){
+        imagesSliderModal[2].style.display = "block";
+        imagesSliderModal[0].style.display = "none";
+        imagesSliderModal[1].style.display = "none";
+        imagesSliderModal[3].style.display = "none";
+        counter = 2;
+    }
+
+    if(e.target === imageCont[3]){
+        imagesSliderModal[3].style.display = "block";
+        imagesSliderModal[0].style.display = "none";
+        imagesSliderModal[1].style.display = "none";
+        imagesSliderModal[2].style.display = "none";
+        counter = 3;
+    }
+
+})
+
+closeModal.addEventListener("click", ()=>{
+    imgModal.style.display = "none";
+})
 
 
+
+//Modal images buttons
+
+
+rightBtnModal.addEventListener("click", ()=>{
+    nextImg(imagesSliderModal)
+    console.log(counter)
+});
+
+leftBtnModal.addEventListener("click", ()=>{
+   previousImg(imagesSliderModal)
+   console.log(counter)
+});
