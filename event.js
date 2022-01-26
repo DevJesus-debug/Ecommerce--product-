@@ -34,11 +34,18 @@ const rightBtnModal = document.querySelector(".right-btn-modal");
 const leftBtnModal = document.querySelector(".left-btn-modal");
 const imgSliderModal = document.querySelector(".img-slider-modal");
 const imagesSliderModal = document.querySelectorAll(".img-slider-modal img");
+const xsImagesModal = document.querySelectorAll(".xs-img-modal img");
+const xsImagesCont = document.querySelectorAll(".xs-img-modal .cont")
+const xsImagesWrap = document.querySelector(".xs-img-modal")
 
 
 
 
 let counter = 0;
+
+
+//Event Listeners/////////////////////////////////////
+
 //Working with hamburger
 
 menu.addEventListener("click",()=>{
@@ -56,37 +63,25 @@ xBtn.addEventListener("click",()=>{
     body.classList.remove("no-scroll");
 });
 
+//Cart Item counter
+let itemCounter = 0;
 
-//Next Image Function
-
-function nextImg(image){
-    counter++
-    if(counter === image.length){
-        image[counter - 1].style.display = "none";
-        counter = 0;  
-    }else if(counter !== 0){
-        image[counter -1].style.display = "none";
-    }else{
+    
+minus.addEventListener("click",()=>{
+    if(itemCounter === 0){
         false
-    }
-    image[counter].style.display = "block";
-}
-
-//Previous Image Function
-
-function previousImg(image){
-    counter--
-    if(counter === -1){
-        counter = image.length - 1;
-        image[0].style.display ="none";
-    }else if(counter !== image.length -1){
-        image[counter + 1].style.display = "none"; 
     }else{
-        false
+        itemCounter--
+        quantity.innerText = itemCounter;
     }
+});
 
-    image[counter].style.display = "block";
-}
+plus.addEventListener("click",()=>{
+    itemCounter++
+    if(itemCounter !== 0){
+        quantity.innerText = itemCounter;
+    }
+});
 
 //Image Carousel buttons
 
@@ -99,29 +94,6 @@ nextBtn.addEventListener("click", ()=>{
 prevBtn.addEventListener("click", ()=>{
    previousImg(imageCont)
 });
-
-
-
-
-//Cart Item counter
-    let itemCounter = 0;
-
-    
-    minus.addEventListener("click",()=>{
-        if(itemCounter === 0){
-            false
-        }else{
-            itemCounter--
-            quantity.innerText = itemCounter;
-        }
-    });
-    
-    plus.addEventListener("click",()=>{
-        itemCounter++
-        if(itemCounter !== 0){
-            quantity.innerText = itemCounter;
-        }
-    });
 
 //Cart functionality
 
@@ -154,43 +126,36 @@ deleteBtn.addEventListener("click",()=>{
     cartCount.classList.remove("display-count");
 })
 
-//Desktop mini images Funtionality
 
-
-
+//Desktop mini images
 xsImageCont.addEventListener("mouseover", (e)=>{
-    if(e.target === xsImages[0]){
-        imageCont[0].style.display = "block";
-        imageCont[1].style.display = "none";
-        imageCont[2].style.display = "none";
-        imageCont[3].style.display = "none";
-    }else if(e.target === xsImages[1]){
-        imageCont[1].style.display ="block";
-        imageCont[0].style.display = "none";
-        imageCont[2].style.display = "none";
-        imageCont[3].style.display = "none";
-    }else if(e.target === xsImages[2]){
-        imageCont[2].style.display ="block";
-        imageCont[0].style.display = "none";
-        imageCont[1].style.display = "none";
-        imageCont[3].style.display = "none";
-    }else if(e.target === xsImages[3]){
-        imageCont[3].style.display ="block";
-        imageCont[0].style.display = "none";
-        imageCont[1].style.display = "none";
-        imageCont[2].style.display = "none";
-    }
+    miniImagesHover(e,imageCont,xsImages)
+    toggleImages()
 })
+
+//Desktop modal mini images
+xsImagesWrap.addEventListener("mouseover", (e)=>{
+    miniImagesHover(e,imagesSliderModal,xsImagesModal);
+})
+
 
 //Modal Functionality
 imgSlider.addEventListener("click", (e)=>{
     imgModal.style.display = "flex";
-    console.log(e.target)
     if(e.target === imageCont[0]){
         imagesSliderModal[0].style.display = "block";
         imagesSliderModal[1].style.display = "none";
         imagesSliderModal[2].style.display = "none";
         imagesSliderModal[3].style.display = "none";
+        //Active image Opacity and Border style 
+        xsImagesModal[0].classList.add("active-opacity");
+        xsImagesCont[0].classList.add("active-border");
+        xsImagesModal[1].classList.remove("active-opacity");
+        xsImagesCont[1].classList.remove("active-border");
+        xsImagesModal[2].classList.remove("active-opacity");
+        xsImagesCont[2].classList.remove("active-border");
+        xsImagesModal[3].classList.remove("active-opacity");
+        xsImagesCont[3].classList.remove("active-border");
         counter = 0;
     }
 
@@ -199,6 +164,15 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[2].style.display = "none";
         imagesSliderModal[3].style.display = "none";
         imagesSliderModal[0].style.display = "none";
+         //Active image Opacity and Border style 
+        xsImagesModal[1].classList.add("active-opacity");
+        xsImagesCont[1].classList.add("active-border");
+        xsImagesModal[0].classList.remove("active-opacity");
+        xsImagesCont[0].classList.remove("active-border");
+        xsImagesModal[2].classList.remove("active-opacity");
+        xsImagesCont[2].classList.remove("active-border");
+        xsImagesModal[3].classList.remove("active-opacity");
+        xsImagesCont[3].classList.remove("active-border");
         counter = 1;
     }
 
@@ -207,6 +181,15 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[0].style.display = "none";
         imagesSliderModal[1].style.display = "none";
         imagesSliderModal[3].style.display = "none";
+         //Active image Opacity and Border style 
+         xsImagesModal[2].classList.add("active-opacity");
+         xsImagesCont[2].classList.add("active-border");
+         xsImagesModal[1].classList.remove("active-opacity");
+         xsImagesCont[1].classList.remove("active-border");
+         xsImagesModal[0].classList.remove("active-opacity");
+         xsImagesCont[0].classList.remove("active-border");
+         xsImagesModal[3].classList.remove("active-opacity");
+         xsImagesCont[3].classList.remove("active-border");
         counter = 2;
     }
 
@@ -215,6 +198,15 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[0].style.display = "none";
         imagesSliderModal[1].style.display = "none";
         imagesSliderModal[2].style.display = "none";
+         //Active image Opacity and Border style 
+         xsImagesModal[3].classList.add("active-opacity");
+         xsImagesCont[3].classList.add("active-border");
+         xsImagesModal[1].classList.remove("active-opacity");
+         xsImagesCont[1].classList.remove("active-border");
+         xsImagesModal[2].classList.remove("active-opacity");
+         xsImagesCont[2].classList.remove("active-border");
+         xsImagesModal[0].classList.remove("active-opacity");
+         xsImagesCont[0].classList.remove("active-border");
         counter = 3;
     }
 
@@ -228,13 +220,86 @@ closeModal.addEventListener("click", ()=>{
 
 //Modal images buttons
 
-
 rightBtnModal.addEventListener("click", ()=>{
-    nextImg(imagesSliderModal)
-    console.log(counter)
+    nextImg(imagesSliderModal);
 });
 
 leftBtnModal.addEventListener("click", ()=>{
    previousImg(imagesSliderModal)
-   console.log(counter)
+   
 });
+
+//Functions//////////////////////////////////////////////
+
+//Modal carousel mini images functionality
+
+//Carousel functionality
+
+function previousImg(image){
+    counter--
+    if(counter === -1){
+        counter = image.length - 1;
+        image[0].style.display ="none";
+    }else if(counter !== image.length -1){
+        image[counter + 1].style.display = "none";
+    }else{
+        false
+    }
+    image[counter].style.display = "block";
+    
+}
+
+//Next Image Function
+
+function nextImg(image){
+    counter++
+    if(counter === image.length){
+        image[counter - 1].style.display = "none";
+        counter = 0;  
+    }else if(counter !== 0){
+        image[counter -1].style.display = "none";
+    }else{
+        false
+    }
+    image[counter].style.display = "block";
+}
+
+
+
+//Toggle the mini images classes function
+function toggleImages(e,container,image,){
+   
+}
+
+
+//Desktop mini images Funtionality
+
+function miniImagesHover(e,mainImages,miniImages){
+    if(e.target === miniImages[0]){
+        counter = 0;
+        mainImages[0].style.display = "block";
+        mainImages[1].style.display = "none";
+        mainImages[2].style.display = "none";
+        mainImages[3].style.display = "none";
+    }else if(e.target === miniImages[1]){
+        counter = 1;
+        mainImages[1].style.display ="block";
+        mainImages[0].style.display = "none";
+        mainImages[2].style.display = "none";
+        mainImages[3].style.display = "none";
+    }else if(e.target === miniImages[2]){
+        counter = 2;
+        mainImages[2].style.display ="block";
+        mainImages[0].style.display = "none";
+        mainImages[1].style.display = "none";
+        mainImages[3].style.display = "none";
+    }else if(e.target === miniImages[3]){
+        counter = 3;
+        mainImages[3].style.display ="block";
+        mainImages[0].style.display = "none";
+        mainImages[1].style.display = "none";
+        mainImages[2].style.display = "none";
+    }
+}
+
+

@@ -620,14 +620,16 @@ nav .cart-cont .profile-img img{
     border-radius: 10px;
 }
 
-.image-cont .xs-img-cont img:hover{
+.image-cont .xs-img-cont img.active-opacity{
     opacity: 0.3;
 }
 
-.image-cont .xs-img-cont .cont:hover{
+.image-cont .xs-img-cont .cont.cont.active-border{
     border: solid 3px var(--orange);
   
 }
+
+
 
 
 /*Info container*/
@@ -752,6 +754,15 @@ nav .cart-cont .profile-img img{
 .image-modal .image-cont-modal .xs-img-modal img:hover{
    opacity: 0.3;
 }
+
+.image-modal .image-cont-modal .xs-img-modal img.active-opacity{
+    opacity: 0.3;
+ }
+
+.image-modal .image-cont-modal .xs-img-modal .cont.active-border{
+    border: solid 3px var(--orange);
+}
+
 
 .image-modal .image-cont-modal .modal-btn{
     display: flex;
