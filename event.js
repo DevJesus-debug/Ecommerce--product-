@@ -2,6 +2,7 @@
 const imageCont = document.querySelectorAll(".img-slider img");
 const imgSlider = document.querySelector(".img-slider");
 const xsImageCont = document.querySelector(".xs-img-cont");
+const xsImagesCont = document.querySelectorAll(".xs-img-cont .cont");
 const xsImages = document.querySelectorAll(".xs-img-cont img");
 //Buttons
 const nextBtn = document.querySelector(".right-btn");
@@ -35,8 +36,8 @@ const leftBtnModal = document.querySelector(".left-btn-modal");
 const imgSliderModal = document.querySelector(".img-slider-modal");
 const imagesSliderModal = document.querySelectorAll(".img-slider-modal img");
 const xsImagesModal = document.querySelectorAll(".xs-img-modal img");
-const xsImagesCont = document.querySelectorAll(".xs-img-modal .cont")
-const xsImagesWrap = document.querySelector(".xs-img-modal")
+const xsImagesContModal = document.querySelectorAll(".xs-img-modal .cont")
+const xsImgContModal = document.querySelector(".xs-img-modal")
 
 
 
@@ -130,13 +131,18 @@ deleteBtn.addEventListener("click",()=>{
 //Desktop mini images
 xsImageCont.addEventListener("mouseover", (e)=>{
     miniImagesHover(e,imageCont,xsImages)
-    toggleImages()
+    toggleImages(e,xsImagesCont,xsImages)
 })
 
 //Desktop modal mini images
-xsImagesWrap.addEventListener("mouseover", (e)=>{
+
+xsImgContModal.addEventListener("mouseover", (e)=>{
     miniImagesHover(e,imagesSliderModal,xsImagesModal);
+    toggleImages(e,xsImagesContModal,xsImagesModal);
+    
 })
+
+
 
 
 //Modal Functionality
@@ -149,13 +155,13 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[3].style.display = "none";
         //Active image Opacity and Border style 
         xsImagesModal[0].classList.add("active-opacity");
-        xsImagesCont[0].classList.add("active-border");
+        xsImagesContModal[0].classList.add("active-border");
         xsImagesModal[1].classList.remove("active-opacity");
-        xsImagesCont[1].classList.remove("active-border");
+        xsImagesContModal[1].classList.remove("active-border");
         xsImagesModal[2].classList.remove("active-opacity");
-        xsImagesCont[2].classList.remove("active-border");
+        xsImagesContModal[2].classList.remove("active-border");
         xsImagesModal[3].classList.remove("active-opacity");
-        xsImagesCont[3].classList.remove("active-border");
+        xsImagesContModal[3].classList.remove("active-border");
         counter = 0;
     }
 
@@ -166,13 +172,13 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[0].style.display = "none";
          //Active image Opacity and Border style 
         xsImagesModal[1].classList.add("active-opacity");
-        xsImagesCont[1].classList.add("active-border");
+        xsImagesContModal[1].classList.add("active-border");
         xsImagesModal[0].classList.remove("active-opacity");
-        xsImagesCont[0].classList.remove("active-border");
+        xsImagesContModal[0].classList.remove("active-border");
         xsImagesModal[2].classList.remove("active-opacity");
-        xsImagesCont[2].classList.remove("active-border");
+        xsImagesContModal[2].classList.remove("active-border");
         xsImagesModal[3].classList.remove("active-opacity");
-        xsImagesCont[3].classList.remove("active-border");
+        xsImagesContModal[3].classList.remove("active-border");
         counter = 1;
     }
 
@@ -183,13 +189,13 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[3].style.display = "none";
          //Active image Opacity and Border style 
          xsImagesModal[2].classList.add("active-opacity");
-         xsImagesCont[2].classList.add("active-border");
+         xsImagesContModal[2].classList.add("active-border");
          xsImagesModal[1].classList.remove("active-opacity");
-         xsImagesCont[1].classList.remove("active-border");
+         xsImagesContModal[1].classList.remove("active-border");
          xsImagesModal[0].classList.remove("active-opacity");
-         xsImagesCont[0].classList.remove("active-border");
+         xsImagesContModal[0].classList.remove("active-border");
          xsImagesModal[3].classList.remove("active-opacity");
-         xsImagesCont[3].classList.remove("active-border");
+         xsImagesContModal[3].classList.remove("active-border");
         counter = 2;
     }
 
@@ -200,13 +206,13 @@ imgSlider.addEventListener("click", (e)=>{
         imagesSliderModal[2].style.display = "none";
          //Active image Opacity and Border style 
          xsImagesModal[3].classList.add("active-opacity");
-         xsImagesCont[3].classList.add("active-border");
+         xsImagesContModal[3].classList.add("active-border");
          xsImagesModal[1].classList.remove("active-opacity");
-         xsImagesCont[1].classList.remove("active-border");
+         xsImagesContModal[1].classList.remove("active-border");
          xsImagesModal[2].classList.remove("active-opacity");
-         xsImagesCont[2].classList.remove("active-border");
+         xsImagesContModal[2].classList.remove("active-border");
          xsImagesModal[0].classList.remove("active-opacity");
-         xsImagesCont[0].classList.remove("active-border");
+         xsImagesContModal[0].classList.remove("active-border");
         counter = 3;
     }
 
@@ -232,6 +238,56 @@ leftBtnModal.addEventListener("click", ()=>{
 //Functions//////////////////////////////////////////////
 
 //Modal carousel mini images functionality
+
+//Toggle the mini images on hover 
+function toggleImages(e,container,xsImages){
+    if(e.target === xsImages[0]){
+        counter = 0
+        container[0].classList.add("active-border");
+        xsImages[0].classList.add("active-opacity");
+        container[1].classList.remove("active-border");
+        xsImages[1].classList.remove("active-opacity");
+        container[2].classList.remove("active-border");
+        xsImages[2].classList.remove("active-opacity");
+        container[3].classList.remove("active-border");
+        xsImages[3].classList.remove("active-opacity");
+    }
+    if(e.target === xsImages[1]){
+        counter = 1;
+        container[1].classList.add("active-border");
+        xsImages[1].classList.add("active-opacity");
+        container[0].classList.remove("active-border");
+        xsImages[0].classList.remove("active-opacity");
+        container[2].classList.remove("active-border");
+        xsImages[2].classList.remove("active-opacity");
+        container[3].classList.remove("active-border");
+        xsImages[3].classList.remove("active-opacity");
+    }
+    if(e.target === xsImages[2]){
+        counter = 2;
+        container[2].classList.add("active-border");
+        xsImages[2].classList.add("active-opacity");
+        container[0].classList.remove("active-border");
+        xsImages[0].classList.remove("active-opacity");
+        container[1].classList.remove("active-border");
+        xsImages[1].classList.remove("active-opacity");
+        container[3].classList.remove("active-border");
+        xsImages[3].classList.remove("active-opacity");
+    }
+    if(e.target === xsImages[3]){
+        counter = 3
+        container[3].classList.add("active-border");
+        xsImages[3].classList.add("active-opacity");
+        container[1].classList.remove("active-border");
+        xsImages[1].classList.remove("active-opacity");
+        container[2].classList.remove("active-border");
+        xsImages[2].classList.remove("active-opacity");
+        container[0].classList.remove("active-border");
+        xsImages[0].classList.remove("active-opacity");
+    }
+ }
+ 
+
 
 //Carousel functionality
 
@@ -266,13 +322,7 @@ function nextImg(image){
 
 
 
-//Toggle the mini images classes function
-function toggleImages(e,container,image,){
-   
-}
-
-
-//Desktop mini images Funtionality
+//Desktop mini images to display main images Funtionality
 
 function miniImagesHover(e,mainImages,miniImages){
     if(e.target === miniImages[0]){
