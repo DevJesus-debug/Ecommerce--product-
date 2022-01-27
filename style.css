@@ -8,6 +8,10 @@
 
 body{
     min-width: 370px;
+    -webkit-user-select: none; /* Chrome/Safari */ 
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    user-select: none;
     
 }
 
@@ -123,21 +127,28 @@ nav .logo-cont .nav-wraper ul{
     left: 0;
     bottom: 0;
     background-color: white;
-    padding: 100px 0;
+    padding: 100px 80px 100px 25px;
 }
 
 nav .logo-cont .nav-wraper ul li{
    list-style: none;
-   margin:20px;
+   padding-bottom: 3px;
+   margin-bottom: 15px;
    font-family: var(--main-text);
    font-weight: 700;
    font-size: 1.3rem;
 }
 
+nav .logo-cont .nav-wraper ul li:hover{
+    border-bottom: solid 3px var(--orange);
+    padding-bottom: 0;
+ }
+
 
 nav .logo-cont{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 
@@ -157,6 +168,7 @@ nav .cart-cont .cart-logo > img{
 
 nav .cart-cont .profile-img img{
     width: 27px;
+    cursor: pointer;
 }
 
 /*Nav cart counter javascript*/
@@ -774,22 +786,12 @@ nav .cart-cont .profile-img img{
     position: absolute;
     left: -23px;
     top: 45%;
-    outline: none;
-    -webkit-user-select: none; /* Chrome/Safari */ 
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-    user-select: none;
  }
 
  .image-modal .image-cont-modal .right-btn-modal{
     position: absolute;
     top: 45%;
     right: -23px;
-    outline: none;
-    -webkit-user-select: none; /* Chrome/Safari */ 
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-    user-select: none;
  }
 
  .image-modal .image-cont-modal .right-btn-modal:hover .right-svg{
