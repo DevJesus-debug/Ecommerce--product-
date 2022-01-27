@@ -135,9 +135,10 @@ xsImgContModal.addEventListener("mouseover", (e)=>{
     toggleImages(e,xsImagesContModal,xsImagesModal);
 })
 
+
 //Modal Functionality
 imageWrap.addEventListener("click", (e)=>{
-    imgModal.style.display = "flex";
+    imgModal.classList.add("active-modal");
     if(e.target === imageCont[0] || e.target === xsImages[0]){
         imagesSliderModal[0].style.display = "block";
         imagesSliderModal[1].style.display = "none";
@@ -206,7 +207,7 @@ imageWrap.addEventListener("click", (e)=>{
 })
 
 closeModal.addEventListener("click", ()=>{
-    imgModal.style.display = "none";
+    imgModal.classList.remove("active-modal")
 })
 
 //Modal images buttons
